@@ -166,3 +166,11 @@
   background-color: #626F95;
   border-color: #626F95;
 }
+
+.not-found{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}

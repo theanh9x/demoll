@@ -1,5 +1,7 @@
 import React from 'react';
 import Header from "./directory/Header";
+import { Button} from 'antd';
+import "../assets/css/Dashboard.css";
 
 function Dashboard(props) {
  
@@ -17,8 +19,18 @@ function Dashboard(props) {
     <>
     <Header/>
     <div data-testid="dashboard">
-      Welcome Dashboard!<br /><br />
-      <input type="button" onClick={handleLogout} value="Logout" />
+      
+      {/* <input type="button" onClick={handleLogout} value="Logout" /> */}
+      <Button
+          className="btn_Logout"
+          onClick={() => handleLogout()}
+          value="Logout"
+        >
+          Logout
+        </Button>
+
+        <br /><br />
+        <p style={{textAlign:'center'}}>Welcome Dashboard!</p>
     </div>
     </>
   );

@@ -1,4 +1,12 @@
 .head{
     margin-left: 25px;
     margin-top: 11px;
+    margin-bottom: 15px;
+    padding: 10px;
 }
+
+.ant-btn.btn_login {
+    color: #fff;
+    border-color: #7C003F;
+    background: #7C003F;
+  }

@@ -4,7 +4,7 @@ import Dashboard from './components/Dashboard';
 import Login from './components/auth/LoginForm';
 import Reset from './components/auth/Reset';
 import Home from './components/Home';
-
+import NotFound from './components/NotFound';
 function App() {
   return (
     <Router>
@@ -13,6 +13,7 @@ function App() {
         <Route path="/login" component={Login}/>
         <Route exact path="/reset" component={Reset} />
         <Route path="/dashboard" component={Dashboard}/>
+        <Route path="*" component={NotFound} />
       </Switch>
     </Router>
   );

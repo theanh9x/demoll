@@ -40,6 +40,9 @@ const LoginForm = (props) => {
             const token = await LoginService.signIn(values.username, values.password, jwt_token)
             localStorage.setItem('access_token', JSON.stringify(token.data.accessToken));
             localStorage.setItem('refresh_token', JSON.stringify(token.data.refreshToken));
+            if(!remember){
+                localStorage.removeItem('refresh_token');
+            }
             props.history.push('/dashboard');
         } catch (error) {
             console.log(error.message);

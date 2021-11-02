@@ -24,22 +24,6 @@ class LoginService {
     );
   }
 
-  getEmployees(page, pageSize, access_token, refreshtoken) {
-    console.log(refreshtoken);
-    console.log(access_token);
-    return axios.get(
-      // BASE_EMPLOYEE + "?page="+ page +"&pageSize="+pageSize ,
-      BASE_EMPLOYEE,
-      {
-        headers: {
-          'dogoo-x-user-context-request': access_token,
-          'Authorization': 'Bearer ' + refreshtoken,
-        }
-      }
-    )
-
-  }
-
   apiJWTToken() {
     const client_id = "id-8351f41b-74f4-1d3c-bee4-9530ae7099d9";
     const client_secret = "secret-f4cb9b8c-f475-33e6-79ef-fd0d8943ca";
@@ -86,6 +70,23 @@ class LoginService {
       console.log(error.message);
     })
   }
+
+  // getEmployees(page, pageSize, access_token, refreshtoken) {
+  //   console.log(refreshtoken);
+  //   console.log(access_token);
+  //   return axios.get(
+  //     // BASE_EMPLOYEE + "?page="+ page +"&pageSize="+pageSize ,
+  //     BASE_EMPLOYEE,
+  //     {
+  //       headers: {
+  //         'dogoo-x-user-context-request': access_token,
+  //         'Authorization': 'Bearer ' + refreshtoken,
+  //       }
+  //     }
+  //   )
+
+  // }
+
 
 }
 

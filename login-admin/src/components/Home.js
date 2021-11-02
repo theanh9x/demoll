@@ -14,11 +14,11 @@ function Home(props) {
     <Header/>
     <div data-testid="home">
         <div className="head">
-            <Button name="Login" type="Login" text="Login" onClick={handleLogin}>
+            <Button name="Login" type="Login" text="Login" onClick={handleLogin} className="btn_login">
               Login
             </Button>
         </div>
-        <p>Welcome Home!</p><br /><br />
+        <p style={{textAlign:'center'}}>Welcome Home!</p><br /><br />
     </div>
     </>
   );
