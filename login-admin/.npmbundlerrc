@@ -1,0 +1,6 @@
+{
+	"*": {
+        "plugins": ["inject-imports-dependencies"]
+    },
+    "preset": "liferay-npm-bundler-preset-create-react-app"
+}
