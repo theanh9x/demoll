@@ -8,11 +8,13 @@ import LoginService from '../../service/LoginService';
 const LoginForm = (props) => {
 
 
-    const [remember, setRemember] = useState(false);
+    const [remember, setRemember] = useState(true);
 
 
     useEffect(() => {
-        LoginService.checkRemember(props);
+        //  LoginService.checkRemember(props);
+       
+
     }, [])
 
     function success(value, msg) {
@@ -27,22 +29,33 @@ const LoginForm = (props) => {
     }
 
     function onChangeCheck(e) {
-        setRemember(e.target.checked);
+        const check = e.target.checked;
+        
+        setRemember(check);
+        if(!check) {
+        }
     };
 
 
 
     const onFinish = async (values) => {
         try {
-            const jwt_token_res = await LoginService.apiJWTToken();
-            const jwt_token = jwt_token_res.data.access_token;
-            localStorage.setItem('jwt_token', JSON.stringify(jwt_token));
-            const token = await LoginService.signIn(values.username, values.password, jwt_token)
+            const access_token_res = await LoginService.apiJWTToken();
+            const access_token = access_token_res.data.access_token;
+
+
+           
+            const token = await LoginService.signIn(values.username, values.password, access_token)  
+            
+          
+            localStorage.setItem('token', JSON.stringify(access_token));
             localStorage.setItem('access_token', JSON.stringify(token.data.accessToken));
             localStorage.setItem('refresh_token', JSON.stringify(token.data.refreshToken));
-            if(!remember){
-                localStorage.removeItem('refresh_token');
-            }
+            localStorage.setItem('checkRemember', remember);
+
+            
+
+
             props.history.push('/dashboard');
         } catch (error) {
             console.log(error.message);

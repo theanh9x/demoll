@@ -5,7 +5,21 @@ import Login from './components/auth/LoginForm';
 import Reset from './components/auth/Reset';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
+import { useEffect } from 'react';
 function App() {
+
+  useEffect(() => {
+    console.log(localStorage.getItem('checkRemember'))
+    setInterval(() => {
+     
+      if(localStorage.getItem('checkRemember') ===true)  
+        console.log("asgjSKLGJk")
+
+      
+    },1500)
+
+  },[])
+
   return (
     <Router>
       <Switch>

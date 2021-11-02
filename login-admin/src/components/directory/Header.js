@@ -4,7 +4,7 @@ import DogooLogo from '../../assets/images/DogooLogo.png';
 function Header() {
  
     return (
-        <div className="header">
+        <div className="header" data-testid="header">
             <img src={DogooLogo} alt="Logo" width="260" className="header__logo"/>
         </div>
     );

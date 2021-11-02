@@ -1,7 +1,7 @@
 import axios from 'axios';
 const BASE_URL = "http://localhost:8080/o/authz-rest/";
 const BASE_TOKEN = "http://localhost:8080/o/oauth2/token";
-const BASE_EMPLOYEE = "http://localhost:8080/o/dogoo/employee-rest-builder/v1.0/employees/";
+// const BASE_EMPLOYEE = "http://localhost:8080/o/dogoo/employee-rest-builder/v1.0/employees/";
 const BASE_REFRESH_TOKEN = "http://localhost:8080/o/authz-rest/refreshtoken";
 class LoginService {
 
@@ -62,14 +62,14 @@ class LoginService {
     return axios.request(options)
   }
 
-  checkRemember(props) {
-    this.getCurrentUser().then((response) => {
-      // localStorage.setItem('access_token', response.data.)
-      props.history.push('/dashboard');
-    }).catch((error) => {
-      console.log(error.message);
-    })
-  }
+  // checkRemember(props) {
+  //   this.getCurrentUser().then((response) => {
+  //     // localStorage.setItem('access_token', response.data.)
+  //     props.history.push('/dashboard');
+  //   }).catch((error) => {
+  //     console.log(error.message);
+  //   })
+  // }
 
   // getEmployees(page, pageSize, access_token, refreshtoken) {
   //   console.log(refreshtoken);

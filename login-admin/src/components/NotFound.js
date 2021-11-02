@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/directory/Header';
 
 const NotFound = () => (
-  <>
+  <div data-testid="notfound">
     <Header />
     <div className="not-found">
       <img
@@ -20,7 +20,7 @@ const NotFound = () => (
       </div>
     </div>
 
-  </>
+  </div>
 );
 
 export default NotFound;
